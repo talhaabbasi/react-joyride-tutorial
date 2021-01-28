@@ -9,10 +9,22 @@ function App() {
     {
       target: ".tour1",
       content: "This is a cool feature of my website!",
+      floaterProps: {
+        disableAnimation: true,
+      },
+      spotlightPadding: 20,
     },
     {
       target: ".tour2",
       content: "This is a cool feature of my website 2!",
+    },
+    {
+      content: <h2>Sticky elements</h2>,
+      floaterProps: {
+        disableAnimation: true,
+      },
+      spotlightPadding: 20,
+      target: ".star-burst",
     },
   ];
   return (
@@ -21,6 +33,7 @@ function App() {
         steps={steps}
         run={run}
         continuous
+        scrollToFirstStep
         showProgress
         showSkipButton
         locale={{
@@ -28,8 +41,9 @@ function App() {
           skip: "Close tour",
         }}
       />
-      <h3 className="tour1">Hey! I am a cool feature!</h3>
+      <button className="tour1">Hey! I am a cool feature!</button>
       <h3 className="tour2">Hey! I am a cool feature!</h3>
+      <p className="star-burst">Hello</p>
     </div>
   );
 }
